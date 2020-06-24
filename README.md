@@ -1,8 +1,3 @@
-<p align="center">
-  <a href="https://telegram.me/csibrobot"><img src="./screenshots/main.jpg?raw=true" alt="main.jpg" width="500"></a>
-</p>
-
-
 [![csivit][csivitu-shield]](https://csivit.com)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
@@ -56,7 +51,7 @@
 ## About The Project
 
 <p align="center">
-  <a href="https://telegram.me/csibrobot"><img src="./screenshots/brobot.jpg?raw=true" alt="BroBot.jpg" width="250"></a>
+  <a href="https://telegram.me/csibrobot"><img src="./screenshots/main.jpg?raw=true" alt="main.jpg" width="500"></a>
 </p>
 
 [BroBot](https://telegram.me/csibrobot):
@@ -86,7 +81,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* Python 3.x
+* [Python 3.x](https://www.python.org/downloads/release/python-383/)
 
 ### Installation
  
