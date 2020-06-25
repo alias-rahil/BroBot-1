@@ -8,12 +8,12 @@ def meme(update, context):
     options = subreddits
     choice = random.choice((options + ["all"]))
     if choice == "all":
-        api = meme_api + choice
+        api = f"{meme_api}/{choice}
         response = requests.get(api).json()
         while response["subreddit"] in options:
             response = requests.get(api).json()
     else:
-        response = requests.get(meme_api + choice).json()
+        response = requests.get(f"{meme_api}/{choice}).json()
     update.message.reply_photo(response["url"], caption=response["title"])
 
 
