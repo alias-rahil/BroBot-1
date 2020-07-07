@@ -6,6 +6,7 @@ invalid_message = "You have selected an invalid option!"
 math_api = "https://api.mathjs.org/v4/?expr="
 subreddits = [
     "dankmemes",
+    "darkmemers",
     "PrequelMemes",
     "politicalhumour",
     "memes",
