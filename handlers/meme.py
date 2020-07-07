@@ -6,8 +6,8 @@ from telegram.ext import CommandHandler
 
 def meme(update, context):
     options = [i.lower() for i in subreddits]
-    choice = random.choice((options + ["all", "featured"]))
-    if choice == "all" or choice == "featured":
+    choice = random.choice((options + ["all"]))
+    if choice == "all":
         api = f"{meme_api}/{choice}"
         response = requests.get(api).json()
         while response["subreddit"].lower() in options:
