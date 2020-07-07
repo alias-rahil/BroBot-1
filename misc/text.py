@@ -66,4 +66,4 @@ ask_no = "Send me the recipient's full phone number including the country code p
 ask_message = "Send me the message!"
 proxy_api = "https://www.proxyscan.io/api/proxy/?type=http"
 image_link = "https://raw.githubusercontent.com/alias-rahil/CSI-BroBot/master/screenshots/main.jpg"
-shell_msg = "Run shell commands from the chat itself:\n\nFor example, try sending me: uname --all\\n.\n\nDon't forget to postfix your command with \\n (resolves as enter-key) whenever necessary!"
+shell_msg = "Send me 'Force exit!' to exit the shell-session at any time. Run shell commands from the chat itself:\n\nFor example, try sending me: uname --all\\n.\n\nDon't forget to postfix your command with \\n (resolves as enter-key) whenever necessary!"
