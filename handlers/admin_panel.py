@@ -77,7 +77,7 @@ def add_admin(update, context):
             .strip()
             .split("\n")
         ]
-        admin = update.message.text.lower()
+        admin = update.message.text.lower().replace("@", "")
         if admin in admin_list:
             update.message.reply_text(admin + " " + already_admin)
         else:
