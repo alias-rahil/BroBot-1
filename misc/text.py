@@ -27,6 +27,7 @@ subreddits = [
     "ComedyCemetery",
     "terriblefacebookmemes",
     "teenagers",
+    "memes_of_the_dank",
     "PewdiepieSubmissions",
 ]
 err_msg = "Internal error! Please, try again later!"
