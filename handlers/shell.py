@@ -100,7 +100,7 @@ def get_error(update):
 
 
 def run_command(update, context):
-    if update.message.text != "Force exit!"
+    if update.message.text != "Force exit!":
         try:
             sessions[update.message.from_user.id][0].stdin.write(
                 literal_eval(repr(update.message.text).replace("\\\\", "\\")).encode()
