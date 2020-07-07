@@ -100,35 +100,40 @@ def get_error(update):
 
 
 def run_command(update, context):
-    try:
-        sessions[update.message.from_user.id][0].stdin.write(
-            literal_eval(repr(update.message.text).replace("\\\\", "\\")).encode()
-        )
-        sessions[update.message.from_user.id][0].stdin.flush()
-        time.sleep(2)
-        text = ansistrip.ansi_strip(
-            sessions[update.message.from_user.id][2].replace(
-                sessions[update.message.from_user.id][4], "", 1
+    if update.message.text != "Force exit!"
+        try:
+            sessions[update.message.from_user.id][0].stdin.write(
+                literal_eval(repr(update.message.text).replace("\\\\", "\\")).encode()
             )
-        )
-        sessions[update.message.from_user.id][4] = sessions[
-            update.message.from_user.id
-        ][2]
-        if sessions[update.message.from_user.id][0].poll() is None:
-            update.message.reply_text(text, reply_markup=ForceReply())
-            return 0
-        else:
-            update.message.reply_text(text)
-            del sessions[update.message.from_user.id]
-            return ConversationHandler.END
-    except BaseException:
-        if sessions[update.message.from_user.id][0].poll() is None:
-            update.message.reply_text(empty_output, reply_markup=ForceReply())
-            return 0
-        else:
-            update.message.reply_text(empty_output)
-            del sessions[update.message.from_user.id]
-            return ConversationHandler.END
+            sessions[update.message.from_user.id][0].stdin.flush()
+            time.sleep(2)
+            text = ansistrip.ansi_strip(
+                sessions[update.message.from_user.id][2].replace(
+                    sessions[update.message.from_user.id][4], "", 1
+                )
+            )
+            sessions[update.message.from_user.id][4] = sessions[
+                update.message.from_user.id
+            ][2]
+            if sessions[update.message.from_user.id][0].poll() is None:
+                update.message.reply_text(text, reply_markup=ForceReply())
+                return 0
+            else:
+                update.message.reply_text(text)
+                del sessions[update.message.from_user.id]
+                return ConversationHandler.END
+        except BaseException:
+            if sessions[update.message.from_user.id][0].poll() is None:
+                update.message.reply_text(empty_output, reply_markup=ForceReply())
+                return 0
+            else:
+                update.message.reply_text(empty_output)
+                del sessions[update.message.from_user.id]
+                return ConversationHandler.END
+    else:
+        update.message.reply_text("Force exited the session!")
+        del sessions[update.message.from_user.id]
+        return ConversationHandler.END
 
 
 ssh_states = {0: [MessageHandler(Filters.text, run_command)]}
