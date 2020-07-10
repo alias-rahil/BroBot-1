@@ -1,0 +1,7 @@
+screenshots/
+Dockerfile
+README.md
+.gitignore
+CONTRIBUTING.md
+LICENSE
+sample.env
