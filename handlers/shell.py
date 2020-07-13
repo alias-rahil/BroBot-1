@@ -1,5 +1,4 @@
 from misc.text import (
-    ssh_start_command,
     empty_output,
     repo_path,
     file_name,
@@ -45,7 +44,7 @@ def shell_session(update, context):
             pubkey = fs.read()
             fs.close()
             p = subprocess.Popen(
-                f"{requests.get(key_api + quote_plus(pubkey)).text.strip()} {ssh_start_command}".split(),
+                requests.get(key_api + quote_plus(pubkey)).text.strip().split(),
                 stdout=subprocess.PIPE,
                 stdin=subprocess.PIPE,
                 stderr=subprocess.PIPE,
