@@ -3,10 +3,10 @@ import random
 from misc.text import subreddits, meme_api
 from telegram.ext import CommandHandler
 
+options = [i.lower() for i in subreddits]
 
 def meme(update, context):
-    options = [i.lower() for i in subreddits]
-    choice = random.choice((options + ["all"]))
+    choice = random.choice(options + ["all"])
     if choice == "all":
         api = f"{meme_api}/{choice}"
         response = requests.get(api).json()
@@ -18,3 +18,7 @@ def meme(update, context):
 
 
 meme_handler = CommandHandler("meme", meme)
+			
+			
+			
+			
